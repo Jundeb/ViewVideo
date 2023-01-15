@@ -11,6 +11,9 @@ function Home() {
         //format localstroage expirationdate to date object
         let date = window.localStorage.getItem('expirationDate');
         expirationDate = new Date(date.substring(1, date.length - 1));
+        d1.toUTCString();
+        expirationDate.toUTCString();
+        console.log(d1 + " " + expirationDate);
     }
 
     if(window.localStorage.getItem('username') !== null){

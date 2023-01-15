@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -6,16 +7,26 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 
+  const [user, setUser] = useState({});
+
   const logOut = () => {
     window.localStorage.removeItem('username');
     window.localStorage.removeItem('licenseId');
     window.localStorage.removeItem('balance');
     window.localStorage.removeItem('license');
     window.localStorage.removeItem('expirationDate');
-    window.location.pathname = '/';
+    setUser(null);
   }
 
-  if(window.localStorage.getItem('username') !== null){
+  useEffect(() => {
+    if(window.localStorage.getItem('username') !== null){
+      setUser(window.localStorage.getItem('username'));
+    }
+  }, [window.localStorage.getItem('username')]);
+
+
+
+  if(user !== null && user !== '' && user !== undefined){
     return (
       <Navbar expand="lg" bg="dark" variant="dark">
         <Container>

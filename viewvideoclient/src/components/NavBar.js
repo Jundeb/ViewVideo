@@ -12,7 +12,7 @@ function NavBar() {
     window.localStorage.removeItem('balance');
     window.localStorage.removeItem('license');
     window.localStorage.removeItem('expirationDate');
-    window.location.pathname = '/home';
+    window.location.pathname = '/';
   }
 
   if(window.localStorage.getItem('username') !== null){

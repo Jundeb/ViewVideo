@@ -23,7 +23,7 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className='justify-content-end' activeKey="/home">
-                <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                <Nav.Link as={Link} to="/">Home</Nav.Link>
                 <Nav.Link as={Link} to="/renew">Renew License</Nav.Link>
                 <Nav.Link onClick={logOut}>Logout</Nav.Link>
             </Nav>

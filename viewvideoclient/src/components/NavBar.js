@@ -7,10 +7,11 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
 
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
 
   const logOut = () => {
     window.localStorage.removeItem('username');
+    window.localStorage.removeItem('userId');
     window.localStorage.removeItem('licenseId');
     window.localStorage.removeItem('balance');
     window.localStorage.removeItem('license');

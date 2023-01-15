@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+.form{
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+    height: 100%;
+}
+
+.form h2{
+    text-align: center;
+}
+
+.form input{
+    margin-bottom: 1rem;
+}
+.form button{
+    margin:auto;
+}

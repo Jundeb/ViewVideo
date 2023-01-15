@@ -66,7 +66,7 @@ function Login() {
                 'expirationDate', JSON.stringify(data.expirationDate)
             )
             if(data.licenseId !== null){
-                window.location.reload();
+                window.location.pathname = '/';
             }
         })
         .catch(error => console.log(error));

@@ -28,6 +28,6 @@ React
 ## API run environment
 Azure App Service
 
-## Static app hosting
+## Static App hosting
 Azure Static Web App
 

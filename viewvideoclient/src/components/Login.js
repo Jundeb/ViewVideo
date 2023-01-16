@@ -31,23 +31,24 @@ function Login() {
             if(data.name){
                 setSuccess('Login successful!');
                 setError(null);
+                window.localStorage.setItem(
+                    'userId', JSON.stringify(data.userId)
+                )
+                window.localStorage.setItem(
+                    'username', JSON.stringify(data.name)
+                )
+                window.localStorage.setItem(
+                    'balance', JSON.stringify(data.balance)
+                )
+                window.localStorage.setItem(
+                    'licenseId', JSON.stringify(data.licenseId)
+                )
+                window.location.pathname = '/';
             }
             else{
                 setError('Invalid username or password!');
                 setSuccess(null);
             }
-            window.localStorage.setItem(
-                'userId', JSON.stringify(data.userId)
-            )
-            window.localStorage.setItem(
-                'username', JSON.stringify(data.name)
-            )
-            window.localStorage.setItem(
-                'balance', JSON.stringify(data.balance)
-            )
-            window.localStorage.setItem(
-                'licenseId', JSON.stringify(data.licenseId)
-            )
         })
         .catch(error => console.log(error));
 
@@ -65,9 +66,6 @@ function Login() {
             window.localStorage.setItem(
                 'expirationDate', JSON.stringify(data.expirationDate)
             )
-            if(data.licenseId !== null){
-                window.location.pathname = '/';
-            }
         })
         .catch(error => console.log(error));
 

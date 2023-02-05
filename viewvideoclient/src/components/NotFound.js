@@ -1,21 +1,12 @@
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import "../App.css"
-import { useEffect } from "react";
-
 
 function NotFound() {
-
-  //redirects to Login when on a wrong page
-  useEffect(() => {
-    setTimeout(() => {
-      document.location.href = "/home";
-    }, 2500
-    );
-  }, []);
-
   return (
     <div className="notFound">
       <h1>Page not found</h1>
-      <p>Redirecting to Home page.</p>
+      <Button as={Link} to="/home">Return To Home</Button>
     </div>
   );
 }

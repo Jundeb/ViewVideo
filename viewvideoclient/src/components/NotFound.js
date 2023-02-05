@@ -6,8 +6,7 @@ function NotFound() {
   //redirects to Login when on a wrong page
   useEffect(() => {
     setTimeout(() => {
-      //window.location.href = "https://viewvideoserver-aspnetserver.azurewebsites.net/home"
-      window.location.href = "http://localhost:3000/home"
+      window.location.href = "https://viewvideoserver-aspnetserver.azurewebsites.net/home";
     }, 2500
     );
   }, []);

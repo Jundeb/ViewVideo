@@ -6,7 +6,7 @@ function NotFound() {
   //redirects to Login when on a wrong page
   useEffect(() => {
     setTimeout(() => {
-      window.location.href = "https://viewvideoserver-aspnetserver.azurewebsites.net/home";
+      window.location.href = "https://proud-rock-03e39a603.2.azurestaticapps.net/home";
     }, 2500
     );
   }, []);

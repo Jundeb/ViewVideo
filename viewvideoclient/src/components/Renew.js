@@ -1,70 +1,50 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import UserContext from '../context/UserProvider';
+import LicenseContext from '../context/LicenseProvides';
 
 
 function Renew() {
 
-    let balance = 0;
-    let user = {};
-    const [message, setMessage] = useState(null);
+    const { user, setUser } = useContext(UserContext);
+    const { license, setLicense } = useContext(LicenseContext);
 
-    if (window.localStorage.getItem('balance') !== null) {
-        balance = JSON.parse(window.localStorage.getItem('balance'));
-        balance = parseInt(balance);
-    }
+    const [message, setMessage] = useState(null);
 
     const handleRenew = async (e) => {
         e.preventDefault();
 
-        let name = window.localStorage.getItem('username');
-        //parse "" out from name
-        name = name.substring(1, name.length - 1);
-
         let amount = document.querySelector('.amount').value;
 
-        await fetch(`https://viewvideoserver-aspnetserver.azurewebsites.net/renew-license?name=${name}&amount=${amount}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.startsWith("License renewed")) {
-                    window.localStorage.setItem(
-                        'balance', JSON.stringify(parseInt(balance) - parseInt(amount))
-                    );
+        try {
+            const response = await axios.post(`https://viewvideoserver-aspnetserver.azurewebsites.net/renew-license?name=${user.username}&amount=${amount}`,
+                {
+                    headers: { 'Content-Type': 'application/json' }
+                });
 
-                    let expirationDate = data.substring(data.length - 19, data.length);
-                    window.localStorage.setItem(
-                        'expirationDate', JSON.stringify(expirationDate)
-                    );
-                }
-                setMessage(data);
-            })
-            .catch(error => console.log(error));
+            setMessage(response.data);
 
-            let userId = window.localStorage.getItem('userId');
+            let balance = parseInt(user.balance) - parseInt(amount);
 
-        await fetch(`https://viewvideoserver-aspnetserver.azurewebsites.net/get-license-byUserId/${userId}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                window.localStorage.setItem(
-                    'license', JSON.stringify(data)
-                )
-                window.localStorage.setItem(
-                    'expirationDate', JSON.stringify(data.expirationDate)
-                )
-            })
-            .catch(error => console.log(error));
+            setUser(prev => {
+                return { ...prev, balance: balance }
+            });
 
+            window.localStorage.setItem('balance', JSON.stringify(balance));
+
+            const response2 = await axios.get(`https://viewvideoserver-aspnetserver.azurewebsites.net/get-license-byUserId/${user.userId}`);
+
+            setLicense(prev => {
+                return { ...prev, licenseId: response2.data.licenseId, expirationDate: response2.data.expirationDate }
+            });
+
+            window.localStorage.setItem('expirationDate', JSON.stringify(response2.data.expirationDate));
+
+        } catch (error) {
+            setMessage(error.response.data);
+        }
         setTimeout(() => {
             setMessage(null);
         }, 5000);
@@ -74,7 +54,8 @@ function Renew() {
         <div>
             <Form className='form'>
                 <h2>Renew License</h2>
-                <h3>Your balance: {balance}</h3>
+                <h3>Your balance: {user.balance}</h3>
+                <p>1 coin = 1 minute</p>
                 {message && <p className='message'>{message}</p>}
                 <Form.Group>
                     <Form.Label htmlFor="amount">Amount</Form.Label>

@@ -7,7 +7,7 @@ function Register() {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
 
-    const handleRegister = async(e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         const user = {
@@ -22,26 +22,23 @@ function Register() {
             },
             body: JSON.stringify(user)
         })
-        .then(response => {
-            response.json();
-            if(response.status === 200){
-                setSuccess('User created successfully!');
-                setError(null);
-            }
-            else{
-                setError('User already exists!');
-                setSuccess(null);
-            }
+            .then(response => {
+                response.json();
+                if (response.status === 200) {
+                    setSuccess('User created successfully!');
+                    setError(null);
+                }
+                else {
+                    setError('User already exists!');
+                    setSuccess(null);
+                }
 
-            setTimeout(() => {
-                setSuccess(null);
-                setError(null);
-            }, 3000);
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => console.log(error));
+                setTimeout(() => {
+                    setSuccess(null);
+                    setError(null);
+                }, 3000);
+            })
+            .catch(error => console.log(error));
     };
 
     return (
@@ -62,6 +59,6 @@ function Register() {
             </Form>
         </div>
     );
-  }
+}
 
 export default Register;

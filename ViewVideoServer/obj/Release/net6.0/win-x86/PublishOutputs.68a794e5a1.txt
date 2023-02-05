@@ -1,6 +1,3 @@
-C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db
-C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db-shm
-C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\Data\AppDB.db-wal
 C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\ViewVideoServer.exe
 C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\appsettings.Development.json
 C:\Users\Junnu\Desktop\JunnuKyro_HomeAssignment\ViewVideoServer\ViewVideoServer\obj\Release\net6.0\win-x86\PubTmp\Out\appsettings.json

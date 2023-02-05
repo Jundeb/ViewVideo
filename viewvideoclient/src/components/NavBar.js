@@ -1,33 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import { Link } from "react-router-dom";
+import UserContext from '../context/UserProvider.js';
+import LicenseContext from '../context/LicenseProvides.js';
 
 function NavBar() {
 
-  const [user, setUser] = useState(null);
+  const { user, setUser } = useContext(UserContext);
+  const { license, setLicense } = useContext(LicenseContext);
 
   const logOut = () => {
-    window.localStorage.removeItem('username');
-    window.localStorage.removeItem('userId');
-    window.localStorage.removeItem('licenseId');
-    window.localStorage.removeItem('balance');
-    window.localStorage.removeItem('license');
-    window.localStorage.removeItem('expirationDate');
-    setUser(null);
+    setUser(prev => {
+      return { ...prev, userId: null, username: null, balance: null }
+    });
+
+    setLicense(prev => {
+      return { ...prev, licenseId: null, expirationDate: null }
+    });
+
+    window.localStorage.clear();
   }
 
-  useEffect(() => {
-    if(window.localStorage.getItem('username') !== null){
-      setUser(window.localStorage.getItem('username'));
-    }
-  }, [window.localStorage.getItem('username')]);
-
-
-
-  if(user !== null && user !== '' && user !== undefined){
+  if (user.userId !== null) {
     return (
       <Navbar expand="lg" bg="dark" variant="dark">
         <Container>
@@ -35,16 +31,16 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className='justify-content-end' activeKey="/home">
-                <Nav.Link as={Link} to="/">Home</Nav.Link>
-                <Nav.Link as={Link} to="/renew">Renew License</Nav.Link>
-                <Nav.Link onClick={logOut}>Logout</Nav.Link>
+              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+              <Nav.Link as={Link} to="/renew">Renew License</Nav.Link>
+              <Nav.Link onClick={logOut}>Logout</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     );
   }
-  else{
+  else {
     return (
       <Navbar expand="lg" bg="dark" variant="dark">
         <Container>
@@ -52,15 +48,15 @@ function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <Nav className="justify-content-end" activeKey="/home">
-                <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                <Nav.Link as={Link} to="/register">Create New User</Nav.Link>
+              <Nav.Link as={Link} to="/home">Home</Nav.Link>
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/register">Create New User</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     );
   }
-  }
+}
 
 export default NavBar;

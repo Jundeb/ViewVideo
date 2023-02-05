@@ -21,3 +21,8 @@ body{
 .form button{
     margin:auto;
 }
+
+.notFound{
+    text-align: center;
+    margin-top: 1rem;
+}

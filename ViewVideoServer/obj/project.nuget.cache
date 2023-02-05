@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sJizcbwrBXTBZsD5nyl/DKixtvqhIHJNURp6E1YCsdv/SDwSKiuc6rN9JJUjsJ1MLadoIGD6ok1iI7t5BTkxGA==",
+  "dgSpecHash": "jUtNgcZdqL4WkZlnpYffBMzzUQEB15ZHYSLllWpKCqxBLfuL0Qay3fzwmnP6S8QNHpnOSpgyN+mCiTMVwLQvTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\ViewVideoServer.csproj",
+  "projectFilePath": "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\ViewVideoServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Junnu\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Junnu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -56,11 +56,7 @@
     "C:\\Users\\Junnu\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\Junnu\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Junnu\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\Junnu\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
-    "C:\\Users\\Junnu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
-    "C:\\Users\\Junnu\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
-    "C:\\Users\\Junnu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
-    "C:\\Users\\Junnu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512"
+    "C:\\Users\\Junnu\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

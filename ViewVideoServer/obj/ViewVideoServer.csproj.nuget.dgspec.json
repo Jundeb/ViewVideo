@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\ViewVideoServer.csproj": {}
+    "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\ViewVideoServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\ViewVideoServer.csproj": {
+    "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\ViewVideoServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\ViewVideoServer.csproj",
+        "projectUniqueName": "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\ViewVideoServer.csproj",
         "projectName": "ViewVideoServer",
-        "projectPath": "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\ViewVideoServer.csproj",
+        "projectPath": "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\ViewVideoServer.csproj",
         "packagesPath": "C:\\Users\\Junnu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Junnu\\Desktop\\JunnuKyro_HomeAssignment\\ViewVideoServer\\ViewVideoServer\\obj\\",
+        "outputPath": "C:\\JunnuKyro_HomeAssignment 1\\ViewVideo\\ViewVideoServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Junnu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,24 +74,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.13, 6.0.13]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

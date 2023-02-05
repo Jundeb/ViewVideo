@@ -182,13 +182,16 @@ namespace ViewVideoServer.Data
                     {
                         var foundLicense = await db.Licenses.FirstOrDefaultAsync(license => license.UserId == foundUser.UserId);
 
-                        if (foundLicense != null && DateTime.Compare(foundLicense.expirationDate, DateTime.Now) == -1)
+                        DateTime currentTime = DateTime.UtcNow;
+                        currentTime = currentTime.AddHours(2);
+
+                        if (foundLicense != null && DateTime.Compare(foundLicense.expirationDate, currentTime) == -1)
                         {
                             db.Remove(foundLicense);
                         }
-                        else if (foundLicense != null && DateTime.Compare(foundLicense.expirationDate, DateTime.Now) == 1)
+                        else if (foundLicense != null && DateTime.Compare(foundLicense.expirationDate, currentTime) == 1)
                         {
-                            return $"License still active. Current license expires: {foundLicense.expirationDate}";
+                            return "License still active.";
                         }
 
                         //user has enough "money"
@@ -196,11 +199,14 @@ namespace ViewVideoServer.Data
                         {
                             foundUser.Balance = foundUser.Balance - amount;
 
-                            DateTime currentTime = DateTime.Now;
+                            DateTime expirationTime = DateTime.UtcNow;
+                            expirationTime = expirationTime.AddHours(2);
+                            expirationTime= expirationTime.AddMinutes(amount);
 
                             License newLicense = new License
                             {
-                                expirationDate = currentTime.AddMinutes(amount),
+                                creationTime=currentTime,
+                                expirationDate =expirationTime,
                                 UserId = foundUser.UserId
                             };
 
@@ -218,7 +224,7 @@ namespace ViewVideoServer.Data
 
                             if (saveWasSuccesfull >= 1)
                             {
-                                return $"License renewed! New license expires: {newLicense.expirationDate}";
+                                return "License renewed!";
                             }
                             else
                             {

@@ -3,9 +3,6 @@
 ## Projects name: ViewVideo
 
 ## Link to app: https://proud-rock-03e39a603.2.azurestaticapps.net/
-Use this accoount for direct access to app:
-Username: TestUser1
-Password: Test1
 
 ## API documentation (Swagger): https://viewvideoserver-aspnetserver.azurewebsites.net/index.html
 
